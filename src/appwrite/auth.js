@@ -1,9 +1,10 @@
 import conf from "../conf/conf";
 import { Client, Account } from "appwrite";
 
-class AuthService {
+export class AuthService {
+  client = new Client();
+  account;
   constructor() {
-    this.client = new Client();
     this.client
       .setEndpoint(conf.appwriteUrl)
       .setProject(conf.appwriteProjectId);
